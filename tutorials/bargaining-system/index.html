@@ -1,0 +1,1532 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the Degent Group AI Chat System">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Bargaining System Tutorial - Degent Group Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bargaining-system-tutorial" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Degent Group Documentation" class="md-header__button md-logo" aria-label="Degent Group Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Degent Group Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Bargaining System Tutorial
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com//KingJiongEN//DegentGroup" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/installation.md" class="md-tabs__link">
+          
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../modules/telegram/" class="md-tabs__link">
+          
+  
+  Core Modules
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../basic-bot/" class="md-tabs__link">
+          
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../api/telegram/" class="md-tabs__link">
+          
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../examples/basic.md" class="md-tabs__link">
+          
+  
+  Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Degent Group Documentation" class="md-nav__button md-logo" aria-label="Degent Group Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Degent Group Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com//KingJiongEN//DegentGroup" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/configuration.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quickstart.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Core Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Core Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/telegram/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Telegram Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/user-group-agent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Group Agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/bargaining/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bargaining System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/artwork-creation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Artwork Creation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/proactive-group-agent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proactive Group Agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basic-bot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Bot Setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nft-creation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NFT Creation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../group-chat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Group Chat
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API Reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/telegram/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Telegram Client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/agent-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agent Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/nft-tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NFT Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/basic.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/advanced.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advanced Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-bargaining-agent-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Bargaining Agent Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-deal-maker-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Deal Maker Implementation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-price-oracle-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Price Oracle Integration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-negotiation-flow-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Negotiation Flow Implementation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-command-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Command Implementation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="bargaining-system-tutorial">Bargaining System Tutorial</h1>
+<p>This tutorial will guide you through implementing the TeleAgent Bargaining System for automated NFT price negotiations.</p>
+<h2 id="overview">Overview</h2>
+<p>We'll create a system that:
+1. Implements automated price negotiations
+2. Handles multi-party bargaining
+3. Integrates with NFT pricing data
+4. Manages deal completion
+5. Provides transaction security</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Completed <a href="../basic-bot/">Basic Bot Setup</a></li>
+<li>Understanding of <a href="../nft-creation/">NFT Creation</a></li>
+<li>Basic knowledge of price negotiation concepts</li>
+</ul>
+<h2 id="project-structure">Project Structure</h2>
+<pre><code>bargaining_system/
+├── agents/
+│   ├── bargainer.py
+│   ├── deal_maker.py
+│   └── price_advisor.py
+├── models/
+│   ├── negotiation.py
+│   └── deal.py
+├── services/
+│   ├── price_oracle.py
+│   └── escrow.py
+└── main.py
+</code></pre>
+<h2 id="step-1-bargaining-agent-setup">Step 1: Bargaining Agent Setup</h2>
+<pre><code class="language-python"># agents/bargainer.py
+from teleAgent.models.agent_model.bargain.bargainer import BargainerAgent
+from teleAgent.models.agent_model.utilities.bargain_utils import PriceRange
+
+class NFTBargainer:
+    def __init__(self, config: dict):
+        self.agent = BargainerAgent(
+            agent_id=config[&quot;agent_id&quot;],
+            nft_dao=config[&quot;nft_dao&quot;],
+            llm_config=config[&quot;llm&quot;]
+        )
+        self.price_range = PriceRange(
+            min_price=config[&quot;min_price&quot;],
+            max_price=config[&quot;max_price&quot;]
+        )
+
+    async def start_negotiation(self, context: dict) -&gt; dict:
+        &quot;&quot;&quot;Start a new negotiation session&quot;&quot;&quot;
+        try:
+            # Initialize negotiation
+            session = await self.agent.create_session(
+                context=context,
+                price_range=self.price_range
+            )
+
+            # Set initial offer
+            initial_offer = await self._calculate_initial_offer(context)
+            await session.set_initial_offer(initial_offer)
+
+            return {
+                &quot;session_id&quot;: session.id,
+                &quot;initial_offer&quot;: initial_offer,
+                &quot;status&quot;: &quot;started&quot;
+            }
+        except Exception as e:
+            logger.error(f&quot;Failed to start negotiation: {e}&quot;)
+            raise
+</code></pre>
+<h2 id="step-2-deal-maker-implementation">Step 2: Deal Maker Implementation</h2>
+<pre><code class="language-python"># agents/deal_maker.py
+class DealMaker:
+    def __init__(self, config: dict):
+        self.min_profit = config[&quot;min_profit&quot;]
+        self.max_rounds = config[&quot;max_rounds&quot;]
+
+    async def evaluate_offer(self, offer: dict, context: dict) -&gt; bool:
+        &quot;&quot;&quot;Evaluate if an offer should be accepted&quot;&quot;&quot;
+        # Check market conditions
+        market_price = await self._get_market_price(offer[&quot;nft_id&quot;])
+
+        # Calculate potential profit
+        potential_profit = self._calculate_profit(
+            offer[&quot;price&quot;],
+            market_price
+        )
+
+        # Check if offer meets criteria
+        if potential_profit &gt;= self.min_profit:
+            return True
+
+        # Consider negotiation history
+        if context[&quot;round&quot;] &gt;= self.max_rounds:
+            return potential_profit &gt; 0
+
+        return False
+
+    async def finalize_deal(self, session_id: str) -&gt; dict:
+        &quot;&quot;&quot;Finalize a successful negotiation&quot;&quot;&quot;
+        try:
+            # Get session details
+            session = await self._get_session(session_id)
+
+            # Create deal
+            deal = await self._create_deal(session)
+
+            # Initialize escrow
+            await self._setup_escrow(deal)
+
+            return {
+                &quot;deal_id&quot;: deal.id,
+                &quot;status&quot;: &quot;finalized&quot;,
+                &quot;terms&quot;: deal.terms
+            }
+        except Exception as e:
+            logger.error(f&quot;Failed to finalize deal: {e}&quot;)
+            raise
+</code></pre>
+<h2 id="step-3-price-oracle-integration">Step 3: Price Oracle Integration</h2>
+<pre><code class="language-python"># services/price_oracle.py
+class NFTPriceOracle:
+    def __init__(self, config: dict):
+        self.data_sources = config[&quot;data_sources&quot;]
+        self.cache_duration = config[&quot;cache_duration&quot;]
+        self._price_cache = {}
+
+    async def get_price_estimate(self, nft_id: str) -&gt; float:
+        &quot;&quot;&quot;Get estimated price for NFT&quot;&quot;&quot;
+        # Check cache
+        if self._is_cache_valid(nft_id):
+            return self._price_cache[nft_id][&quot;price&quot;]
+
+        # Fetch prices from multiple sources
+        prices = await self._fetch_prices(nft_id)
+
+        # Calculate weighted average
+        estimated_price = self._calculate_weighted_price(prices)
+
+        # Update cache
+        self._update_cache(nft_id, estimated_price)
+
+        return estimated_price
+
+    async def _fetch_prices(self, nft_id: str) -&gt; list:
+        &quot;&quot;&quot;Fetch prices from configured data sources&quot;&quot;&quot;
+        prices = []
+        for source in self.data_sources:
+            try:
+                price = await source.get_price(nft_id)
+                prices.append({
+                    &quot;price&quot;: price,
+                    &quot;weight&quot;: source.reliability
+                })
+            except Exception as e:
+                logger.warning(f&quot;Failed to fetch price from {source}: {e}&quot;)
+        return prices
+</code></pre>
+<h2 id="step-4-negotiation-flow-implementation">Step 4: Negotiation Flow Implementation</h2>
+<pre><code class="language-python"># models/negotiation.py
+class NegotiationSession:
+    def __init__(self, config: dict):
+        self.id = str(uuid.uuid4())
+        self.buyer = config[&quot;buyer&quot;]
+        self.seller = config[&quot;seller&quot;]
+        self.nft_id = config[&quot;nft_id&quot;]
+        self.status = &quot;active&quot;
+        self.rounds = []
+        self.current_offer = None
+
+    async def make_offer(self, offer: float, party: str) -&gt; dict:
+        &quot;&quot;&quot;Record a new offer in the negotiation&quot;&quot;&quot;
+        self.rounds.append({
+            &quot;round&quot;: len(self.rounds) + 1,
+            &quot;party&quot;: party,
+            &quot;offer&quot;: offer,
+            &quot;timestamp&quot;: datetime.now()
+        })
+
+        self.current_offer = offer
+        return {
+            &quot;status&quot;: &quot;offer_made&quot;,
+            &quot;round&quot;: len(self.rounds),
+            &quot;offer&quot;: offer
+        }
+
+    async def accept_offer(self) -&gt; dict:
+        &quot;&quot;&quot;Accept the current offer&quot;&quot;&quot;
+        self.status = &quot;accepted&quot;
+        return {
+            &quot;status&quot;: &quot;accepted&quot;,
+            &quot;final_price&quot;: self.current_offer,
+            &quot;rounds&quot;: len(self.rounds)
+        }
+
+    async def reject_offer(self, reason: str = None) -&gt; dict:
+        &quot;&quot;&quot;Reject the current offer&quot;&quot;&quot;
+        self.status = &quot;rejected&quot;
+        return {
+            &quot;status&quot;: &quot;rejected&quot;,
+            &quot;reason&quot;: reason,
+            &quot;rounds&quot;: len(self.rounds)
+        }
+</code></pre>
+<h2 id="step-5-command-implementation">Step 5: Command Implementation</h2>
+<pre><code class="language-python"># main.py
+class BargainingCommands:
+    def __init__(self, client: TelegramClient):
+        self.client = client
+        self.bargainer = NFTBargainer(config)
+        self.deal_maker = DealMaker(config)
+
+    async def setup_handlers(self):
+        @self.client.on_command(&quot;start_bargain&quot;)
+        async def handle_start_bargain(message):
+            try:
+                # Parse NFT ID and initial price
+                nft_id = message.text.split()[1]
+
+                # Start negotiation
+                result = await self.bargainer.start_negotiation({
+                    &quot;nft_id&quot;: nft_id,
+                    &quot;user_id&quot;: message.from_user.id
+                })
+
+                # Send confirmation
+                await self.client.send_message(
+                    chat_id=message.chat.id,
+                    text=f&quot;🤝 Negotiation started!\n&quot;
+                         f&quot;Initial offer: {result['initial_offer']} SOL\n&quot;
+                         f&quot;Use /make_offer &lt;amount&gt; to negotiate&quot;
+                )
+
+            except Exception as e:
+                await self.client.send_message(
+                    chat_id=message.chat.id,
+                    text=f&quot;❌ Failed to start bargaining: {str(e)}&quot;
+                )
+
+        @self.client.on_command(&quot;make_offer&quot;)
+        async def handle_make_offer(message):
+            try:
+                # Parse offer amount
+                amount = float(message.text.split()[1])
+
+                # Process offer
+                result = await self.bargainer.process_offer(
+                    session_id=get_active_session(message.from_user.id),
+                    amount=amount
+                )
+
+                # Check if deal can be made
+                if await self.deal_maker.evaluate_offer(result, {
+                    &quot;round&quot;: result[&quot;round&quot;]
+                }):
+                    # Finalize deal
+                    deal = await self.deal_maker.finalize_deal(
+                        result[&quot;session_id&quot;]
+                    )
+
+                    await self.client.send_message(
+                        chat_id=message.chat.id,
+                        text=f&quot;🎉 Deal reached!\n&quot;
+                             f&quot;Final price: {deal['terms']['price']} SOL&quot;
+                    )
+                else:
+                    # Continue negotiation
+                    counter_offer = await self.bargainer.generate_counter_offer(
+                        result
+                    )
+
+                    await self.client.send_message(
+                        chat_id=message.chat.id,
+                        text=f&quot;Counter offer: {counter_offer} SOL&quot;
+                    )
+
+            except Exception as e:
+                await self.client.send_message(
+                    chat_id=message.chat.id,
+                    text=f&quot;❌ Failed to process offer: {str(e)}&quot;
+                )
+</code></pre>
+<h2 id="best-practices">Best Practices</h2>
+<ol>
+<li>
+<p><strong>Price Validation</strong>
+   <code>python
+   def validate_price(price: float, context: dict) -&gt; bool:
+       """Validate if price is within acceptable range"""
+       return (
+           price &gt;= context["min_price"] and
+           price &lt;= context["max_price"] and
+           price &gt; 0
+       )</code></p>
+</li>
+<li>
+<p><strong>Transaction Security</strong>
+   ```python
+   async def secure_transaction(deal: dict):
+       """Implement secure transaction handling"""
+       # Create escrow
+       escrow = await create_escrow_account(deal)</p>
+<p># Lock funds
+   await escrow.lock_funds(deal["price"])</p>
+<p># Verify NFT ownership
+   await verify_nft_ownership(deal["nft_id"], deal["seller"])</p>
+<p># Execute transfer
+   return await execute_secure_transfer(escrow, deal)
+   ```</p>
+</li>
+<li>
+<p><strong>State Management</strong>
+   ```python
+   class NegotiationState:
+       """Manage negotiation state"""
+       def <strong>init</strong>(self):
+           self.active_sessions = {}
+           self.completed_deals = {}</p>
+<p>async def save_state(self):
+       """Persist negotiation state"""
+       await database.save_sessions(self.active_sessions)
+       await database.save_deals(self.completed_deals)
+   ```</p>
+</li>
+</ol>
+<h2 id="testing">Testing</h2>
+<pre><code class="language-python"># test_bargaining.py
+@pytest.mark.asyncio
+async def test_negotiation_flow():
+    # Setup
+    bargainer = NFTBargainer(test_config)
+    deal_maker = DealMaker(test_config)
+
+    # Start negotiation
+    session = await bargainer.start_negotiation({
+        &quot;nft_id&quot;: &quot;test_nft&quot;,
+        &quot;initial_price&quot;: 100
+    })
+
+    # Make offer
+    result = await bargainer.process_offer(
+        session[&quot;session_id&quot;],
+        90
+    )
+
+    # Verify result
+    assert result[&quot;status&quot;] == &quot;counter_offer&quot;
+    assert 80 &lt;= result[&quot;counter_offer&quot;] &lt;= 100
+</code></pre>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<ol>
+<li><strong>Price Discrepancies</strong></li>
+<li>Check price oracle data</li>
+<li>Verify calculation logic</li>
+<li>
+<p>Monitor market conditions</p>
+</li>
+<li>
+<p><strong>Failed Negotiations</strong></p>
+</li>
+<li>Review negotiation logs</li>
+<li>Check price thresholds</li>
+<li>
+<p>Verify user permissions</p>
+</li>
+<li>
+<p><strong>Transaction Issues</strong></p>
+</li>
+<li>Verify wallet balances</li>
+<li>Check network status</li>
+<li>Monitor gas prices</li>
+</ol>
+<h2 id="next-steps">Next Steps</h2>
+<ol>
+<li>Implement advanced features:</li>
+<li>Multi-party negotiations</li>
+<li>Auction integration</li>
+<li>
+<p>Price prediction</p>
+</li>
+<li>
+<p>Add security features:</p>
+</li>
+<li>Fraud detection</li>
+<li>Dispute resolution</li>
+<li>
+<p>Insurance integration</p>
+</li>
+<li>
+<p>Explore other tutorials:</p>
+</li>
+<li><a href="../artwork-creation/">Artwork Creation</a> </li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "search.highlight"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1611 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the Degent Group AI Chat System">
+      
+      
+      
+      
+        <link rel="prev" href="../../modules/proactive-group-agent/">
+      
+      
+        <link rel="next" href="../nft-creation/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Basic Bot Setup - Degent Group Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#basic-bot-setup-tutorial" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Degent Group Documentation" class="md-header__button md-logo" aria-label="Degent Group Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Degent Group Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Basic Bot Setup
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com//KingJiongEN//DegentGroup" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/installation.md" class="md-tabs__link">
+          
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../modules/telegram/" class="md-tabs__link">
+          
+  
+  Core Modules
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../api/telegram/" class="md-tabs__link">
+          
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../examples/basic.md" class="md-tabs__link">
+          
+  
+  Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Degent Group Documentation" class="md-nav__button md-logo" aria-label="Degent Group Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Degent Group Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com//KingJiongEN//DegentGroup" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/configuration.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quickstart.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Core Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Core Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/telegram/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Telegram Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/user-group-agent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Group Agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/bargaining/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bargaining System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/artwork-creation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Artwork Creation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/proactive-group-agent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proactive Group Agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Basic Bot Setup
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Basic Bot Setup
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-project-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Project Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-command-handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Command Handlers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-message-handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Message Handlers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-media-handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Media Handlers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-main-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6: Main Application
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-running-the-bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 7: Running the Bot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nft-creation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NFT Creation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../group-chat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Group Chat
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API Reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/telegram/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Telegram Client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/agent-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agent Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/nft-tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NFT Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/basic.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/advanced.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advanced Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-project-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Project Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-command-handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Command Handlers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-message-handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Message Handlers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-media-handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Media Handlers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-main-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6: Main Application
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-running-the-bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 7: Running the Bot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="basic-bot-setup-tutorial">Basic Bot Setup Tutorial</h1>
+<p>This tutorial will guide you through creating a basic TeleAgent bot with essential features.</p>
+<h2 id="overview">Overview</h2>
+<p>We'll create a bot that can:
+1. Respond to basic commands
+2. Handle different types of messages
+3. Manage group conversations
+4. Implement basic memory and state management</p>
+<h2 id="project-structure">Project Structure</h2>
+<pre><code>my_bot/
+├── config/
+│   └── config.py
+├── handlers/
+│   ├── __init__.py
+│   ├── commands.py
+│   ├── messages.py
+│   └── media.py
+├── utils/
+│   ├── __init__.py
+│   └── helpers.py
+├── .env
+├── requirements.txt
+└── main.py
+</code></pre>
+<h2 id="step-1-project-setup">Step 1: Project Setup</h2>
+<ol>
+<li>
+<p><strong>Create Project Directory</strong>
+   <code>bash
+   mkdir my_bot
+   cd my_bot
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate</code></p>
+</li>
+<li>
+<p><strong>Install Dependencies</strong>
+   <code>bash
+   pip install teleAgent python-dotenv logging</code></p>
+</li>
+<li>
+<p><strong>Create Requirements File</strong>
+   <code>bash
+   pip freeze &gt; requirements.txt</code></p>
+</li>
+</ol>
+<h2 id="step-2-configuration">Step 2: Configuration</h2>
+<ol>
+<li>
+<p><strong>Create <code>.env</code> File</strong>
+   <code>env
+   TELEGRAM_BOT_TOKEN=your_bot_token
+   TELEGRAM_API_ID=your_api_id
+   TELEGRAM_API_HASH=your_api_hash
+   OPENAI_API_KEY=your_openai_key</code></p>
+</li>
+<li>
+<p><strong>Create Configuration Module</strong>
+   ```python
+   # config/config.py
+   import os
+   from dotenv import load_dotenv</p>
+</li>
+</ol>
+<p>load_dotenv()</p>
+<p>class Config:
+       TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+       TELEGRAM_API_ID = os.getenv("TELEGRAM_API_ID")
+       TELEGRAM_API_HASH = os.getenv("TELEGRAM_API_HASH")
+       OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")</p>
+<pre><code>   # Bot Configuration
+   COMMAND_PREFIX = "/"
+   MAX_MESSAGE_LENGTH = 4096
+   RATE_LIMIT = 5  # messages per second
+</code></pre>
+<p>```</p>
+<h2 id="step-3-command-handlers">Step 3: Command Handlers</h2>
+<pre><code class="language-python"># handlers/commands.py
+from teleAgent.integrations.telegram import TelegramClient
+from teleAgent.models.agent_model.user_groupagent import UserGroupAgent
+
+class CommandHandlers:
+    def __init__(self, client: TelegramClient, agent: UserGroupAgent):
+        self.client = client
+        self.agent = agent
+        self.setup_handlers()
+
+    def setup_handlers(self):
+        @self.client.on_command(&quot;start&quot;)
+        async def start_command(message):
+            welcome_text = (
+                &quot;👋 Hello! I'm your TeleAgent bot.\n&quot;
+                &quot;Here are some commands you can use:\n&quot;
+                &quot;/help - Show available commands\n&quot;
+                &quot;/status - Check bot status\n&quot;
+                &quot;/settings - Configure bot settings&quot;
+            )
+            await self.client.send_message(
+                chat_id=message.chat.id,
+                text=welcome_text
+            )
+
+        @self.client.on_command(&quot;help&quot;)
+        async def help_command(message):
+            help_text = await self.agent.generate_help_text()
+            await self.client.send_message(
+                chat_id=message.chat.id,
+                text=help_text
+            )
+
+        @self.client.on_command(&quot;status&quot;)
+        async def status_command(message):
+            status = await self.agent.get_status()
+            await self.client.send_message(
+                chat_id=message.chat.id,
+                text=f&quot;Bot Status:\n{status}&quot;
+            )
+</code></pre>
+<h2 id="step-4-message-handlers">Step 4: Message Handlers</h2>
+<pre><code class="language-python"># handlers/messages.py
+from teleAgent.utilities.rate_limiter import RateLimiter
+
+class MessageHandlers:
+    def __init__(self, client: TelegramClient, agent: UserGroupAgent):
+        self.client = client
+        self.agent = agent
+        self.rate_limiter = RateLimiter(max_requests=5, time_window=60)
+        self.setup_handlers()
+
+    def setup_handlers(self):
+        @self.client.on_message()
+        @self.rate_limiter.limit
+        async def handle_message(message):
+            # Process message with agent
+            response = await self.agent.process_message(message)
+
+            # Send response
+            if response:
+                await self.client.send_message(
+                    chat_id=message.chat.id,
+                    text=response
+                )
+
+        @self.client.on_edited_message()
+        async def handle_edited_message(message):
+            await self.agent.process_edited_message(message)
+</code></pre>
+<h2 id="step-5-media-handlers">Step 5: Media Handlers</h2>
+<pre><code class="language-python"># handlers/media.py
+class MediaHandlers:
+    def __init__(self, client: TelegramClient, agent: UserGroupAgent):
+        self.client = client
+        self.agent = agent
+        self.setup_handlers()
+
+    def setup_handlers(self):
+        @self.client.on_photo()
+        async def handle_photo(message):
+            photo = await message.photo[-1].download()
+            caption = await self.agent.analyze_photo(photo)
+            await self.client.send_message(
+                chat_id=message.chat.id,
+                text=f&quot;Photo analysis: {caption}&quot;
+            )
+
+        @self.client.on_document()
+        async def handle_document(message):
+            doc_info = await self.agent.process_document(message.document)
+            await self.client.send_message(
+                chat_id=message.chat.id,
+                text=f&quot;Document info: {doc_info}&quot;
+            )
+</code></pre>
+<h2 id="step-6-main-application">Step 6: Main Application</h2>
+<pre><code class="language-python"># main.py
+import asyncio
+import logging
+from config.config import Config
+from teleAgent.integrations.telegram import TelegramClient
+from teleAgent.models.agent_model.user_groupagent import UserGroupAgent
+from handlers.commands import CommandHandlers
+from handlers.messages import MessageHandlers
+from handlers.media import MediaHandlers
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+async def main():
+    try:
+        # Initialize client
+        client = TelegramClient({
+            &quot;bot_token&quot;: Config.TELEGRAM_BOT_TOKEN,
+            &quot;api_id&quot;: Config.TELEGRAM_API_ID,
+            &quot;api_hash&quot;: Config.TELEGRAM_API_HASH
+        })
+
+        # Initialize agent
+        agent = UserGroupAgent(
+            name=&quot;BasicBot&quot;,
+            system_message=&quot;I am a helpful group chat assistant&quot;,
+            llm_config={&quot;model&quot;: &quot;gpt-4&quot;}
+        )
+
+        # Setup handlers
+        CommandHandlers(client, agent)
+        MessageHandlers(client, agent)
+        MediaHandlers(client, agent)
+
+        # Start the bot
+        logger.info(&quot;Starting bot...&quot;)
+        await client.start()
+        await client.run_forever()
+
+    except Exception as e:
+        logger.error(f&quot;Bot crashed: {e}&quot;)
+        raise
+
+if __name__ == &quot;__main__&quot;:
+    asyncio.run(main())
+</code></pre>
+<h2 id="step-7-running-the-bot">Step 7: Running the Bot</h2>
+<ol>
+<li><strong>Verify Configuration</strong></li>
+<li>Check all environment variables are set</li>
+<li>Verify bot token with BotFather</li>
+<li>
+<p>Test API keys</p>
+</li>
+<li>
+<p><strong>Start the Bot</strong>
+   <code>bash
+   python main.py</code></p>
+</li>
+</ol>
+<h2 id="best-practices">Best Practices</h2>
+<ol>
+<li>
+<p><strong>Error Handling</strong>
+   <code>python
+   try:
+       await operation()
+   except TelegramError as e:
+       logger.error(f"Telegram error: {e}")
+       # Implement retry logic or fallback
+   except Exception as e:
+       logger.error(f"Unexpected error: {e}")
+       # Notify admin or take appropriate action</code></p>
+</li>
+<li>
+<p><strong>Memory Management</strong>
+   <code>python
+   # Implement cleanup routines
+   async def cleanup_old_messages():
+       while True:
+           await agent.cleanup_memory()
+           await asyncio.sleep(3600)  # Run every hour</code></p>
+</li>
+<li>
+<p><strong>Performance Optimization</strong>
+   ```python
+   # Cache frequently used data
+   from functools import lru_cache</p>
+</li>
+</ol>
+<p>@lru_cache(maxsize=100)
+   async def get_user_preferences(user_id: int):
+       return await database.fetch_user_preferences(user_id)
+   ```</p>
+<h2 id="testing">Testing</h2>
+<pre><code class="language-python"># test_bot.py
+import pytest
+from unittest.mock import AsyncMock, patch
+
+@pytest.mark.asyncio
+async def test_start_command():
+    message = AsyncMock()
+    message.chat.id = 123456789
+
+    with patch('teleAgent.integrations.telegram.TelegramClient') as mock_client:
+        client = mock_client.return_value
+        await start_command(message)
+
+        client.send_message.assert_called_once_with(
+            chat_id=123456789,
+            text=&quot;👋 Hello! I'm your TeleAgent bot.&quot;
+        )
+</code></pre>
+<h2 id="next-steps">Next Steps</h2>
+<ol>
+<li>Add more advanced features:</li>
+<li>Custom keyboards</li>
+<li>Inline queries</li>
+<li>
+<p>Callback queries</p>
+</li>
+<li>
+<p>Implement additional functionality:</p>
+</li>
+<li>User preferences</li>
+<li>Admin commands</li>
+<li>
+<p>Analytics tracking</p>
+</li>
+<li>
+<p>Explore other tutorials:</p>
+</li>
+<li><a href="../nft-creation/">NFT Creation</a></li>
+<li><a href="../group-chat/">Group Chat Integration</a></li>
+<li><a href="../bargaining-system/">Bargaining System</a> </li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "search.highlight"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

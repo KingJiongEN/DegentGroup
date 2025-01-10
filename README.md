@@ -1,6 +1,6 @@
 # DegentGoup - The Next-Gen AI-Powered Creative Trading Community 🚀
 
-[![Documentation](https://img.shields.io/badge/docs-latest-blue.svg)](https://github.com/KingJiongEN/DegentGroup/docs)
+[![Documentation](https://img.shields.io/badge/docs-latest-blue.svg)](https://kingjiongen.github.io/DegentGroup/)
 [![Docker](https://img.shields.io/docker/v/degentgroup/platform?label=docker)](https://hub.docker.com/r/degentgroup/platform)
 [![Redis](https://img.shields.io/badge/redis-6.0+-red.svg)](https://redis.io/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)

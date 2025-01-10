@@ -1,0 +1,138 @@
+version: '3.8'
+
+services:
+  # Common infrastructure services
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+    networks:
+      - teleAgent_network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  postgres:
+    image: postgres:13-alpine
+    environment:
+      - POSTGRES_USER=teleAgent
+      - POSTGRES_PASSWORD=teleAgentsecret
+      - POSTGRES_DB=teleAgent
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - teleAgent_network
+
+  # Token Metadata Service
+
+
+  # TeleAgent Bot 1
+  token-metadata-1:
+    build:
+      context: ./services/token-metadata
+      dockerfile: Dockerfile
+    env_file: ./agents/bot-1/token-metadata/.env
+    restart: unless-stopped
+    networks:
+      - teleAgent_network
+  bot-1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: ./agents/bot-1/.env
+    depends_on:
+      - redis
+      - postgres
+      - token-metadata-1
+    environment:
+      - AGENT_NAME=bot-1
+      - AGENT_PERSONALITY=Pop Art Style
+      - ARWEAVE_JWK_FILE=/app/jwk/bot-1-jwk.json
+      - POSTGRES_HOST=postgres
+      - DEBUG=1
+    volumes:
+      - ./agents/bot-1/jwk:/app/jwk
+      - ./teleAgent:/app/teleAgent
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    networks:
+      - teleAgent_network
+
+  # TeleAgent Bot 2
+  token-metadata-2:
+    build:
+      context: ./services/token-metadata
+      dockerfile: Dockerfile
+    env_file: ./agents/bot-2/token-metadata/.env
+    restart: unless-stopped
+    networks:
+      - teleAgent_network
+  bot-2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: ./agents/bot-2/.env
+    depends_on:
+      - redis
+      - postgres
+      - token-metadata-2
+    environment:
+      - AGENT_NAME=bot-2
+      - AGENT_PERSONALITY=Surrealism Style
+      - ARWEAVE_JWK_FILE=/app/jwk/bot-2-jwk.json
+      - POSTGRES_HOST=postgres
+      - DEBUG=1
+    volumes:
+      - ./agents/bot-2/jwk:/app/jwk
+      - ./teleAgent:/app/teleAgent
+    restart: unless-stopped
+    networks:
+      - teleAgent_network
+
+  # TeleAgent Bot 3
+  token-metadata-3:
+    build:
+      context: ./services/token-metadata
+      dockerfile: Dockerfile
+    env_file: ./agents/bot-3/token-metadata/.env
+    restart: unless-stopped
+    networks:
+      - teleAgent_network
+  bot-3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: ./agents/bot-3/.env
+    depends_on:
+      - redis
+      - postgres
+      - token-metadata-3
+    environment:
+      - AGENT_NAME=bot-3
+      - AGENT_PERSONALITY=Surrealism Style
+      - ARWEAVE_JWK_FILE=/app/jwk/bot-3-jwk.json
+      - POSTGRES_HOST=postgres
+      - DEBUG=1
+    volumes:
+      - ./agents/bot-3/jwk:/app/jwk
+      - ./teleAgent:/app/teleAgent
+    restart: unless-stopped
+    networks:
+      - teleAgent_network
+
+volumes:
+  redis_data:
+  postgres_data:
+
+networks:
+  teleAgent_network:
+    driver: bridge

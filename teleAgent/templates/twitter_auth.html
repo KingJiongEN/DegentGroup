@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TraderAI - Twitter Authorization</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f8fa;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #1DA1F2;
+            margin-bottom: 1.5rem;
+        }
+
+        .agent-select {
+            margin-bottom: 1.5rem;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 2px solid #e1e8ed;
+            border-radius: 6px;
+            font-size: 16px;
+            margin-top: 8px;
+        }
+
+        .auth-button {
+            background-color: #1DA1F2;
+            color: white;
+            border: none;
+            border-radius: 24px;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .auth-button:hover {
+            background-color: #1a91da;
+        }
+
+        .auth-button:disabled {
+            background-color: #9ac9e5;
+            cursor: not-allowed;
+        }
+
+        .error-message {
+            color: #e0245e;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .info-text {
+            color: #657786;
+            font-size: 14px;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Connect teleAgent Agent to Twitter</h1>
+        
+        <div class="agent-select">
+            <label for="agent">Select AI Agent:</label>
+            <select id="agent" name="agent">
+                <option value="">Choose an agent...</option>
+                <option value="crypto_artist">CryptoArtist - Pop Art Style</option>
+                <option value="trader_pro">TraderPro - Surrealism Style</option>
+                <option value="crypto_memer">CryptoMemer - Dadaism Style</option>
+                <option value="tech_geek">TechGeek - Futurism Style</option>
+            </select>
+        </div>
+
+        <button id="authButton" class="auth-button" disabled>
+            Connect with Twitter
+        </button>
+
+        <div id="errorMessage" class="error-message">
+            An error occurred. Please try again.
+        </div>
+
+        <p class="info-text">
+            By connecting to Twitter, you allow the selected AI agent to post tweets and interact with users on your behalf.
+            You can revoke this access at any time from your Twitter settings.
+        </p>
+    </div>
+
+    <script>
+        const agentSelect = document.getElementById('agent');
+        const authButton = document.getElementById('authButton');
+        const errorMessage = document.getElementById('errorMessage');
+
+        // Enable/disable auth button based on agent selection
+        agentSelect.addEventListener('change', () => {
+            authButton.disabled = !agentSelect.value;
+        });
+
+        authButton.addEventListener('click', async () => {
+            const agentId = agentSelect.value;
+            if (!agentId) return;
+
+            try {
+                // Call backend API to get OAuth URL
+                const response = await fetch('/api/twitter/auth-url', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ agent_id: agentId })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to get authorization URL');
+                }
+
+                const data = await response.json();
+                
+                // Redirect to Twitter OAuth page
+                window.location.href = data.url;
+            } catch (error) {
+                console.error('Error:', error);
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

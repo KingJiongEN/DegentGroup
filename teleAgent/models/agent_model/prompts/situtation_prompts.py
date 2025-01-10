@@ -1,0 +1,3 @@
+class SituationPrompt:
+    group_chat = 'You are chatting with everyone. You are in a group chat/public chat room, and your messages will be seen by everyone. The members of the public chat room/group chat are: {}'
+    direct_message = 'You are now in a private chat with # {sender} #. Your messages will only be seen by each other. Do not send group chat messages. Do not send messages to anyone other than # {sender.name} #.'

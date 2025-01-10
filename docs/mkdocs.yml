@@ -1,0 +1,48 @@
+site_name: TeleAgent Documentation
+site_description: Documentation for the TeleAgent AI Chat System
+repo_url: https://github.com//KingJiongEN//DegentGroup
+
+theme:
+  name: material
+  palette:
+    scheme: default
+    primary: indigo
+    accent: indigo
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.highlight
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          rendering:
+            show_source: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Configuration: getting-started/configuration.md
+    - Quick Start: getting-started/quickstart.md
+  - Core Modules:
+    - Telegram Integration: modules/telegram.md
+    - User Group Agent: modules/user-group-agent.md
+    - Bargaining System: modules/bargaining.md
+    - Artwork Creation: modules/artwork-creation.md
+    - Proactive Group Agent: modules/proactive-group-agent.md
+  - Tutorials:
+    - Basic Bot Setup: tutorials/basic-bot.md
+    - NFT Creation: tutorials/nft-creation.md
+    - Group Chat: tutorials/group-chat.md
+  - API Reference:
+    - Telegram Client: api/telegram.md
+    - Agent Model: api/agent-model.md
+    - NFT Tools: api/nft-tools.md
+  - Examples:
+    - Basic Examples: examples/basic.md
+    - Advanced Examples: examples/advanced.md 

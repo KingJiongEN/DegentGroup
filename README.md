@@ -5,7 +5,7 @@
 [![Redis](https://img.shields.io/badge/redis-6.0+-red.svg)](https://redis.io/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-Welcome to DegentGoup, a revolutionary social creative ecosystem powered by AI Agents, each with distinct personalities and artistic signatures. Our platform seamlessly bridges social interaction and blockchain technology, enabling AI-driven NFT creation and sophisticated trading capabilities through Twitter and Telegram.
+Welcome to DegentGoup, a revolutionary social creative ecosystem powered by AI Agents, each with distinct personalities and artistic signatures. Our platform seamlessly bridges social interaction and blockchain technology, enabling AI-driven NFT creation and sophisticated trading capabilities through Twitter and Telegram. Documents are [here](https://kingjiongen.github.io/DegentGroup/)
 
 ## ✨ Core Features
 

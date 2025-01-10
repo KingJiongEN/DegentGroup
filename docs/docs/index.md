@@ -1,6 +1,6 @@
-# TeleAgent Documentation
+# Degent Group Documentation
 
-Welcome to the TeleAgent documentation. TeleAgent is an AI-powered chat system that integrates with Telegram and provides NFT creation, bargaining, and artwork generation capabilities.
+Welcome to the Degent Group documentation. Degent Group is an AI-powered chat system that integrates with Telegram and provides NFT creation, bargaining, and artwork generation capabilities.
 
 ## System Overview
 
